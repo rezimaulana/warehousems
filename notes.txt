@@ -1,0 +1,19 @@
+Ketentuan program :
+1. Menggunakan Bahasa pemrograman PHP framework Codeigniter 3
+2. Terdapat login
+3. Setiap warehouse memiliki kategori masing-masing. (Contoh: ATK, Perangkat IT, Dll)
+4. Terdapat form untuk input barang, dan edit barang.
+5. Terdapat view untuk melihat barang sesuai dengan kategori masing-masing.
+6. Untuk mengeluarkan (request out) dan memasukkan (request in) jumlah barang ke
+dalam warehouse, user perlu melakukan request in atau out barang yang dalam proses
+nya terdapat approval.
+7. Jika request out atau request in barang tidak disetujui approver, user tidak dapat
+mengeluarkan atau memasukkan barang.
+8. Jika request out atau request in barang disetujui approver, user dapat mengeluarkan
+atau memasukkan barang.
+Program dibuat kemudian diupload ke GITHUB, mohon informasikan repository nya
+pada email, serta gambarkan dan jelaskan flow chart dan struktur database nya.
+Lama pengerjaan program adalah 2 minggu setelah menerima email ini.
+
+password
+uuid

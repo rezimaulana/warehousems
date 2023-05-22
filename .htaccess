@@ -1,0 +1,6 @@
+DirectoryIndex dexin.php
+RewriteEngine on
+RewriteCond $1 !^(dexin\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ dexin.php/$1 [L,QSA]
