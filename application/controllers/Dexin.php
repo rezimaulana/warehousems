@@ -17,10 +17,10 @@ class Dexin extends MY_Controller {
 
 	function defaultRedirect(){
         if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN){
-            redirect(base_url("dashboard/admin"));
+            redirect(base_url("dashboard"));
         }
-        elseif($this->session->userdata('userdata')['code']==CODE_ROLE_USER){
-            redirect(base_url("dashboard/user"));
+        elseif($this->session->userdata('userdata')['code']===CODE_ROLE_USER){
+            redirect(base_url("dashboard"));
         }
         else{
             redirect(base_url("dexin/logout")); 
