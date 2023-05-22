@@ -146,9 +146,9 @@ INSERT INTO roles (id, code, name, created_by, created_at) VALUES
 ('4c5656d4-2ee0-4c8e-b5e5-57688152dd14', 'USR', 'User', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW());
 
 INSERT INTO users (id, email, username, password, fullname, role_id, created_by, created_at) VALUES
-('e508f500-b73d-44b2-a012-06153cd71f16', 'system@gmail.com', 'system', 'test', 'Maulana Rezi', 'c8ed0b5a-9866-4f77-8c0c-6e315212e554', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
-('dccc2b51-cfb7-4a65-ae1f-870a096941ff', 'admin@gmail.com', 'admin', 'test', 'Anasda', 'bd8986f6-8556-4b47-8a20-d5ae4b257929', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
-('c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'user@gmail.com', 'user', 'test', 'Rian', '4c5656d4-2ee0-4c8e-b5e5-57688152dd14', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW());
+('e508f500-b73d-44b2-a012-06153cd71f16', 'system@gmail.com', 'system', '21232f297a57a5a743894a0e4a801fc3', 'Maulana Rezi', 'c8ed0b5a-9866-4f77-8c0c-6e315212e554', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
+('dccc2b51-cfb7-4a65-ae1f-870a096941ff', 'admin@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Anasda', 'bd8986f6-8556-4b47-8a20-d5ae4b257929', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
+('c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'user@gmail.com', 'user', '21232f297a57a5a743894a0e4a801fc3', 'Rian', '4c5656d4-2ee0-4c8e-b5e5-57688152dd14', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW());
 
 INSERT INTO goods_categories (id, code, name, created_by, created_at) VALUES
 ('6a5721fa-9f68-4e49-9b46-9e777005d5c5', 'ATK', 'Alat Tulis Kantor', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),

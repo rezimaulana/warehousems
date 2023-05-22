@@ -17,3 +17,4 @@ Lama pengerjaan program adalah 2 minggu setelah menerima email ini.
 
 password
 uuid
+var_dump($this->session->userdata('user_data')['id']);
