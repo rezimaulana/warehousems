@@ -19,3 +19,6 @@ password
 var_dump($this->session->userdata('user_data')['id']);
 uuid
 version op/pe
+request location
+detail item
+hapus item

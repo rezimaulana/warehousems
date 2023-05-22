@@ -7,8 +7,26 @@
     <script src="<?= base_url('assets/dist/datatables140422/DataTables-1.11.5/js/jquery.dataTables.min.js') ?>"></script>
     <script>
         $(document).ready(function() {
-            $('#table1').DataTable();
-        } );
+        var table = $('#table1').DataTable({
+            columnDefs: [
+                {
+                    targets: 3,
+                    visible: false
+                }
+            ]
+        });
+
+        // Filter the table based on the selected category
+        $('#category_filter').on('change', function() {
+            var categoryID = $(this).val();
+
+            if (categoryID) {
+                table.column(3).search(categoryID).draw();
+            } else {
+                table.column(3).search('').draw();
+            }
+        });
+    });
     </script>
     </body>
 </html>
