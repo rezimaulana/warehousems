@@ -87,3 +87,8 @@ define('CODE_ROLE_SYSTEM', 'SYS');
 define('CODE_ROLE_ADMIN', 'ADM');
 define('CODE_ROLE_USER', 'USR');
 define('APPLICATION_NAME', 'Warehouse MS');
+define('RES_CREATED', 'Created!');
+define('RES_UPDATED', 'Updated!');
+define('RES_DELETED', 'Deleted!');
+define('RES_FAILED', 'Failed');
+define('RES_VERSION_MISMATCH', 'Version mismatch! File is modified by others.');
