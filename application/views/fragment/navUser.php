@@ -16,7 +16,7 @@
                     <a class="nav-link <?= $url == "/items/" ? 'active' : '' ?>" href="<?=base_url("items");?>">Warehouse Item</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $url == "/create-request/" ? 'active' : '' ?>" href="<?=base_url("create-request");?>">Create Request</a>
+                    <a class="nav-link <?= $url == "/request/" ? 'active' : '' ?>" href="<?=base_url("request/create");?>">Create Request</a>
                 </li>
             </ul>
             <button type="button" class="btn btn-primary nav-item dropdown">

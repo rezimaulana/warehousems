@@ -92,3 +92,5 @@ define('RES_UPDATED', 'Updated!');
 define('RES_DELETED', 'Deleted!');
 define('RES_FAILED', 'Failed');
 define('RES_VERSION_MISMATCH', 'Version mismatch! File is modified by others.');
+define('RES_TRX_COMPLETE', 'Transaction is completed!');
+define('RES_TRX_ROLLBACK', 'Transaction is rollback!');
