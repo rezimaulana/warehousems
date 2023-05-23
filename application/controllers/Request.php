@@ -6,21 +6,16 @@ class Request extends MY_Controller{
         $this->load->model("Goods");
         $this->load->model("Request_types");
         $this->load->model("Request_trx");
+        $this->load->model("Request_hdr");
     }
 
     function index(){
-        if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN ||
-            $this->session->userdata('userdata')['code']===CODE_ROLE_USER) {
-                $data['title']="Items";
-                $data['result'] = $this->Goods->getAll();
+        if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN) {
+                $data['title']="Manage Request";
+                $data['result'] = $this->Request_hdr->getAll();
                 $this->load->view('fragment/headerTable', $data);
-                if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN){
-                    $this->load->view('fragment/navAdmin');
-                }
-                if($this->session->userdata('userdata')['code']===CODE_ROLE_USER){
-                    $this->load->view('fragment/navUser');
-                }
-                $this->load->view('request/index', $data);
+                $this->load->view('fragment/navAdmin');
+                $this->load->view('request/admin/index', $data);
                 $this->load->view('fragment/footerTable1');
         }
         else{

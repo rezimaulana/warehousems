@@ -13,7 +13,8 @@
                     targets: 3,
                     visible: false
                 }
-            ]
+            ],
+            scrollX: true
         });
 
         // Filter the table based on the selected category

@@ -20,7 +20,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $url == "/manage-request/" ? 'active' : '' ?>" href="<?=base_url("manage-request");?>">Manage Request</a>
+                    <a class="nav-link <?= $url == "/request/" ? 'active' : '' ?>" href="<?=base_url("request");?>">Manage Request</a>
                 </li>
                 
             </ul>

@@ -7,7 +7,7 @@
     <script src="<?= base_url('assets/dist/datatables140422/DataTables-1.11.5/js/jquery.dataTables.min.js') ?>"></script>
     <script>
         $(document).ready(function() {
-            $('#table1').DataTable();
+            $('#table1').DataTable({scrollX: true});
         } );
     </script>
     </body>
