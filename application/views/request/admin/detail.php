@@ -84,6 +84,7 @@ if ($result[0]['approval'] == 0 && $result[0]['adm_fullname'] == '') {
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php if (is_array($items) && count($items) > 0) { ?>
                                 <?php foreach ($items as $item) { ?>
                                     <tr>
                                         <td><?= $item['item'] ?></td>
@@ -115,7 +116,7 @@ if ($result[0]['approval'] == 0 && $result[0]['adm_fullname'] == '') {
                                             ?>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php } } ?>
                             </tbody>
                             <tfoot>
                                 <tr>

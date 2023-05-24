@@ -14,11 +14,3 @@ atau memasukkan barang.
 Program dibuat kemudian diupload ke GITHUB, mohon informasikan repository nya
 pada email, serta gambarkan dan jelaskan flow chart dan struktur database nya.
 Lama pengerjaan program adalah 2 minggu setelah menerima email ini.
-
-password
-var_dump($this->session->userdata('user_data')['id']);
-uuid
-version op/pe
-request location
-detail item
-hapus item

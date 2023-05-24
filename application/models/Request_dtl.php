@@ -22,6 +22,24 @@ class Request_dtl extends CI_Model{
             return false;
         }
     }
+
+    function getByGoodsId($id){
+        $this->db->select('rh.trx_code, rd.qty, rt.name, rd.updated_at', false);
+        $this->db->from('request_dtl rd');
+        $this->db->join('request_hdr rh', 'rh.id = rd.request_hdr_id', 'inner');
+        $this->db->join('request_types rt', 'rt.id = rh.request_type_id', 'inner');
+        $this->db->where('rd.goods_id', $id);
+        $this->db->where('rh.approval', true);
+        $this->db->where('rd.is_active', true);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        }
+        else {
+            return false;
+        }
+    }
     
     
 }

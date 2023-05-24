@@ -22,7 +22,7 @@ class Goods extends CI_Model{
     }
 
     function getById($id){
-        $this->db->select('g.id, g.item, g.qty, g.goods_category_id, g.ver, g.is_active, gc.code, gc.name', false);
+        $this->db->select('g.id, g.item, g.qty, g.goods_category_id, g.ver, g.is_active, gc.code, gc.name, g.created_at, g.updated_at', false);
         $this->db->from('goods g');
         $this->db->join('goods_categories gc', 'gc.id = g.goods_category_id', 'inner');
         $this->db->where('g.id', $id);

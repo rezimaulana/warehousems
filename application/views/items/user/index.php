@@ -7,9 +7,10 @@
                 <label for="category_filter" class="form-label">Filter by Category:</label>
                 <select id="category_filter" class="form-select">
                     <option value="">All Categories</option>
+                    <?php if (is_array($categories) && count($categories) > 0) { ?>
                     <?php foreach ($categories as $category) { ?>
                         <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
-                    <?php } ?>
+                    <?php } } ?>
                 </select>
             </div>
             <table id="table1" class="display" style="width:100%">
@@ -23,6 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if (is_array($result) && count($result) > 0) { ?>
                     <?php foreach($result as $res) {?>
                         <tr>
                             <td><?= $res['item'] ?></td>
@@ -33,7 +35,7 @@
                                 <a class="btn btn-success btn-sm" href="<?= base_url('items/detail/').$res['id'] ?>">Detail</a>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php } } ?>
                 </tbody>
                 <tfoot>
                     <tr>

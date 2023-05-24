@@ -5,6 +5,7 @@ class Items extends MY_Controller{
         parent::__construct();
         $this->load->model("Goods");
         $this->load->model("Goods_categories");
+        $this->load->model("Request_dtl");
     }
 
     function index(){
@@ -79,6 +80,31 @@ class Items extends MY_Controller{
     function update(){
         $this->Goods->update();
         redirect(base_url("items"));
+    }
+
+    function detail($id){
+        if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN ||
+            $this->session->userdata('userdata')['code']===CODE_ROLE_USER) {
+
+            $data['title']="Item Detail";
+            $data['goods'] = $this->Goods->getById($id);
+            if($data['goods']){
+                $data['result']= $this->Request_dtl->getByGoodsId($id);
+                $this->load->view('fragment/headerTable', $data);
+                if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN){
+                    $this->load->view('fragment/navAdmin');
+                }
+                if($this->session->userdata('userdata')['code']===CODE_ROLE_USER){
+                    $this->load->view('fragment/navUser');
+                }
+                $this->load->view('items/detail', $data);
+                $this->load->view('fragment/footerTable1');
+            } else {
+                show_404();
+            }
+        } else {
+            redirect(base_url());
+        }
     }
 
 }
