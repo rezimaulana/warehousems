@@ -7,6 +7,7 @@ class Request extends MY_Controller{
         $this->load->model("Request_types");
         $this->load->model("Request_trx");
         $this->load->model("Request_hdr");
+        $this->load->model("Request_dtl");
     }
 
     function index(){
@@ -16,7 +17,7 @@ class Request extends MY_Controller{
                 $this->load->view('fragment/headerTable', $data);
                 $this->load->view('fragment/navAdmin');
                 $this->load->view('request/admin/index', $data);
-                $this->load->view('fragment/footerTable1');
+                $this->load->view('fragment/footerTableFilterStatus');
         }
         else{
             redirect(base_url()); 
@@ -67,43 +68,50 @@ class Request extends MY_Controller{
         return $trxCode;
     }
 
-    // function insert(){
-    //     $result = $this->Goods->insert(); 
-    //     if($result) {
-    //         $this->session->set_flashdata('success', RES_CREATED);
-    //         redirect(base_url('items'));
-    //     } else {
-    //         $this->session->set_flashdata('error', RES_FAILED); 
-    //         redirect(base_url('items'));
-    //     }
-    // }
+    function detail($id){
+        if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN){
+            $data['title']="Request Detail";
+            $data['result']= $this->Request_hdr->getById($id);
+            if($data['result']){
+                $data['items'] = $this->Request_dtl->getByHeaderId($id);
+                $this->load->view('fragment/headerTable', $data);
+                $this->load->view('fragment/navAdmin');
+                $this->load->view('request/admin/detail', $data);
+                $this->load->view('fragment/footerTable1');
+            } else {
+                show_404();
+            }
+        } else {
+            redirect(base_url());
+        }
+    }
 
-    // function delete($id, $ver){
-    //     $this->Goods->deleteById($id, $ver);
-    //     redirect(base_url('items'));
-    // }
+    function approve(){
+        $id = $this->input->post("id");
+        $ver = $this->input->post("ver");
+        $type = $this->input->post("types");
+        $arrNewQty = json_decode($this->input->post("arrNewQty"), true);
+        $notValid = true;
+        foreach ($arrNewQty as $qty) {
+            if ($qty < 0) {
+                $notValid = false;
+                break;
+            }
+        }
+        if($notValid){
+            $this->Request_trx->accept($id, $ver, $type);
+            redirect(base_url('request/detail/'.$id));
+        } else {
+            $this->session->set_flashdata('error', 'Your transaction will result minus in stock(<0)! Please reject this request.');
+            redirect(base_url('request/detail/'.$id));
+        }
+    }
 
-    // function edit($id){
-    //     if($this->session->userdata('userdata')['code']===CODE_ROLE_ADMIN){
-    //         $data['title']="Edit Item";
-    //         $data['result']= $this->Goods->getById($id);
-    //         if($data['result']){
-    //             $data['categories'] = $this->Goods_categories->getAll();
-    //             $this->load->view('fragment/header', $data);
-    //             $this->load->view('fragment/navAdmin');
-    //             $this->load->view('items/admin/edit', $data);
-    //             $this->load->view('fragment/footer');
-    //         } else {
-    //             show_404();
-    //         }
-    //     } else {
-    //         redirect(base_url());
-    //     }
-    // }
-
-    // function update(){
-    //     $this->Goods->update();
-    //     redirect(base_url("items"));
-    // }
+    function reject(){
+        $id = $this->input->post("id");
+        $ver = $this->input->post("ver");
+        $this->Request_trx->reject($id, $ver);
+        redirect(base_url('request/detail/'.$id));
+    }
 
 }

@@ -94,3 +94,5 @@ define('RES_FAILED', 'Failed');
 define('RES_VERSION_MISMATCH', 'Version mismatch! File is modified by others.');
 define('RES_TRX_COMPLETE', 'Transaction is completed!');
 define('RES_TRX_ROLLBACK', 'Transaction is rollback!');
+define('CODE_REQUEST_TYPE_CHECK_IN', 'RCI');
+define('CODE_REQUEST_TYPE_CHECK_OUT', 'RCO');

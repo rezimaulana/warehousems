@@ -96,7 +96,7 @@ class Goods extends CI_Model{
             );
             $query = $this->db->where('id', $id)->update('goods', $data);
             if ($this->db->affected_rows() === 1) {
-                $this->session->set_flashdata('error', RES_UPDATED);
+                $this->session->set_flashdata('success', RES_UPDATED);
                 return TRUE;
             }
             else {

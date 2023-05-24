@@ -92,6 +92,10 @@
                 alert('Item and quantity must not be empty!');
                 return; // Exit the function
             }
+            if (itemQty < 1) {
+                alert('Quantity must be bigger than 0!');
+                return; // Exit the function
+            }
 
             // Check if an item with the same ID already exists in the array
             var existingItemIndex = items.findIndex(function(item) {
