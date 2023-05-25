@@ -155,32 +155,29 @@ INSERT INTO goods_categories (id, code, name, created_by, created_at) VALUES
 ('158325d0-3b65-4c2e-b3e1-c71384f98e55', 'PIT', 'Perangkat IT', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
 ('6be9d5af-d57a-4e77-a726-661f89de5eb4', 'DLL', 'Lain-lain', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW());
 
-INSERT INTO goods (id, item, qty, goods_category_id, created_by, created_at) VALUES
-('5ee6cc82-c306-4bba-b73a-f4104152cf58', 'Pencil', 0, '6a5721fa-9f68-4e49-9b46-9e777005d5c5', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
-('bee2f359-a400-4b9b-9164-de610c8088e3', 'Router', 8,'158325d0-3b65-4c2e-b3e1-c71384f98e55', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
-('5d4d88a3-5352-483d-aa90-1aeafba245af', 'Hammer', 7,'6be9d5af-d57a-4e77-a726-661f89de5eb4', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW());
-
 INSERT INTO request_types (id, code, name, created_by, created_at) VALUES
 ('3bac0dd4-c326-4ec4-a99e-dc64db3eefef', 'RCI', 'Request Check-In', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW()),
 ('61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'RCO', 'Request Check-Out', 'e508f500-b73d-44b2-a012-06153cd71f16', NOW());
 
+#TRX
+INSERT INTO `goods` (`id`, `item`, `qty`, `goods_category_id`, `created_by`, `created_at`, `updated_by`, `updated_at`, `ver`, `is_active`) VALUES
+('02047045-fad5-11ed-9e34-489ebddaa98a', 'Baju', 7, '6be9d5af-d57a-4e77-a726-661f89de5eb4', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 1, 1),
+('081e6a18-fad5-11ed-9e34-489ebddaa98a', 'Router', 7, '158325d0-3b65-4c2e-b3e1-c71384f98e55', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 1, 1),
+('0dcc2fb5-fad5-11ed-9e34-489ebddaa98a', 'Baju', 0, '6be9d5af-d57a-4e77-a726-661f89de5eb4', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:21:43', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:21:43', 1, 0);
+
 INSERT INTO `request_hdr` (`id`, `trx_code`, `request_type_id`, `requested_by`, `approved_by`, `approval`, `created_by`, `created_at`, `updated_by`, `updated_at`, `ver`, `is_active`) VALUES
-('3f422d9a-fa0b-11ed-8e54-489ebddaa98a', 'TRX-1684916172-USYDB-HR7WB', '3bac0dd4-c326-4ec4-a99e-dc64db3eefef', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', NULL, 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:16:12', NULL, '0000-00-00 00:00:00', 0, 1),
-('49e0ef48-fa0b-11ed-8e54-489ebddaa98a', 'TRX-1684916190-E99ZX-ZMNPK', '61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', NULL, 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:16:30', NULL, '0000-00-00 00:00:00', 0, 1),
-('75d75062-fa09-11ed-8e54-489ebddaa98a', 'TRX-1684915405-67421-EU65N', '3bac0dd4-c326-4ec4-a99e-dc64db3eefef', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:05:25', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:05:25', 1, 1),
-('8863ab1b-fa09-11ed-8e54-489ebddaa98a', 'TRX-1684915436-1HGVT-4TSK2', '3bac0dd4-c326-4ec4-a99e-dc64db3eefef', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:05:56', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:05:56', 1, 1),
-('bfb445f2-fa08-11ed-8e54-489ebddaa98a', 'TRX-1684915099-1RAKM-H70HI', '61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 07:59:30', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 07:59:30', 1, 1),
-('f45af6f9-fa09-11ed-8e54-489ebddaa98a', 'TRX-1684915617-APJ5Z-KUKYZ', '61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:08:50', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:08:50', 1, 1);
+('6e02e052-fad6-11ed-9e34-489ebddaa98a', 'TRX-1685003439-X6XG7-TQH7E', '61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', NULL, 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:30:39', NULL, '0000-00-00 00:00:00', 0, 1),
+('99ffc4f3-fad5-11ed-9e34-489ebddaa98a', 'TRX-1685003083-7I82B-N3L5M', '3bac0dd4-c326-4ec4-a99e-dc64db3eefef', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:26', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:26', 1, 1),
+('a2faf5d0-fad5-11ed-9e34-489ebddaa98a', 'TRX-1685003098-DONQ0-AZ5E9', '3bac0dd4-c326-4ec4-a99e-dc64db3eefef', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', NULL, 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:24:58', NULL, '0000-00-00 00:00:00', 0, 1),
+('ad705ab3-fad5-11ed-9e34-489ebddaa98a', 'TRX-1685003116-ZMRR6-QVOG7', '61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:57', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 1, 1),
+('b323e128-fad5-11ed-9e34-489ebddaa98a', 'TRX-1685003125-RSQI6-MDH6T', '61e197fa-22ce-4db6-9e0b-31aed6b6d613', 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', 0, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:10', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:10', 1, 1);
 
 INSERT INTO `request_dtl` (`id`, `goods_id`, `request_hdr_id`, `qty`, `created_by`, `created_at`, `updated_by`, `updated_at`, `ver`, `is_active`) VALUES
-('3f42c5fb-fa0b-11ed-8e54-489ebddaa98a', '5d4d88a3-5352-483d-aa90-1aeafba245af', '3f422d9a-fa0b-11ed-8e54-489ebddaa98a', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:16:12', NULL, '0000-00-00 00:00:00', 0, 1),
-('3f42e6d6-fa0b-11ed-8e54-489ebddaa98a', 'bee2f359-a400-4b9b-9164-de610c8088e3', '3f422d9a-fa0b-11ed-8e54-489ebddaa98a', 3, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:16:12', NULL, '0000-00-00 00:00:00', 0, 1),
-('49e12c04-fa0b-11ed-8e54-489ebddaa98a', '5d4d88a3-5352-483d-aa90-1aeafba245af', '49e0ef48-fa0b-11ed-8e54-489ebddaa98a', 2, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:16:30', NULL, '0000-00-00 00:00:00', 0, 1),
-('49e13ae0-fa0b-11ed-8e54-489ebddaa98a', 'bee2f359-a400-4b9b-9164-de610c8088e3', '49e0ef48-fa0b-11ed-8e54-489ebddaa98a', 2, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:16:30', NULL, '0000-00-00 00:00:00', 0, 1),
-('75d7d8ed-fa09-11ed-8e54-489ebddaa98a', '5d4d88a3-5352-483d-aa90-1aeafba245af', '75d75062-fa09-11ed-8e54-489ebddaa98a', 10, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:05:25', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:05:25', 1, 1),
-('75d7e2b0-fa09-11ed-8e54-489ebddaa98a', 'bee2f359-a400-4b9b-9164-de610c8088e3', '75d75062-fa09-11ed-8e54-489ebddaa98a', 12, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:05:25', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:05:25', 1, 1),
-('886413ee-fa09-11ed-8e54-489ebddaa98a', '5ee6cc82-c306-4bba-b73a-f4104152cf58', '8863ab1b-fa09-11ed-8e54-489ebddaa98a', 12, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:03:56', NULL, '0000-00-00 00:00:00', 0, 1),
-('bfb528c7-fa08-11ed-8e54-489ebddaa98a', '5d4d88a3-5352-483d-aa90-1aeafba245af', 'bfb445f2-fa08-11ed-8e54-489ebddaa98a', 111, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 07:58:19', NULL, '0000-00-00 00:00:00', 0, 1),
-('bfb532fb-fa08-11ed-8e54-489ebddaa98a', '5ee6cc82-c306-4bba-b73a-f4104152cf58', 'bfb445f2-fa08-11ed-8e54-489ebddaa98a', 222, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 07:58:19', NULL, '0000-00-00 00:00:00', 0, 1),
-('f45b3d04-fa09-11ed-8e54-489ebddaa98a', '5d4d88a3-5352-483d-aa90-1aeafba245af', 'f45af6f9-fa09-11ed-8e54-489ebddaa98a', 3, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:08:50', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:08:50', 1, 1),
-('f45b49b6-fa09-11ed-8e54-489ebddaa98a', 'bee2f359-a400-4b9b-9164-de610c8088e3', 'f45af6f9-fa09-11ed-8e54-489ebddaa98a', 4, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-24 08:08:50', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-24 08:08:50', 1, 1);
+('6e03628f-fad6-11ed-9e34-489ebddaa98a', '081e6a18-fad5-11ed-9e34-489ebddaa98a', '6e02e052-fad6-11ed-9e34-489ebddaa98a', 2, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:30:39', NULL, '0000-00-00 00:00:00', 0, 1),
+('9a0045ab-fad5-11ed-9e34-489ebddaa98a', '02047045-fad5-11ed-9e34-489ebddaa98a', '99ffc4f3-fad5-11ed-9e34-489ebddaa98a', 10, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:26', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:26', 1, 1),
+('9a004ae0-fad5-11ed-9e34-489ebddaa98a', '081e6a18-fad5-11ed-9e34-489ebddaa98a', '99ffc4f3-fad5-11ed-9e34-489ebddaa98a', 10, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:26', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:26', 1, 1),
+('a2fb2d54-fad5-11ed-9e34-489ebddaa98a', '02047045-fad5-11ed-9e34-489ebddaa98a', 'a2faf5d0-fad5-11ed-9e34-489ebddaa98a', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:24:58', NULL, '0000-00-00 00:00:00', 0, 1),
+('a2fb35a7-fad5-11ed-9e34-489ebddaa98a', '081e6a18-fad5-11ed-9e34-489ebddaa98a', 'a2faf5d0-fad5-11ed-9e34-489ebddaa98a', 1, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:24:58', NULL, '0000-00-00 00:00:00', 0, 1),
+('ad7090b4-fad5-11ed-9e34-489ebddaa98a', '081e6a18-fad5-11ed-9e34-489ebddaa98a', 'ad705ab3-fad5-11ed-9e34-489ebddaa98a', 3, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:57', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 1, 1),
+('ad709ce5-fad5-11ed-9e34-489ebddaa98a', '02047045-fad5-11ed-9e34-489ebddaa98a', 'ad705ab3-fad5-11ed-9e34-489ebddaa98a', 3, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:26:57', 'dccc2b51-cfb7-4a65-ae1f-870a096941ff', '2023-05-25 08:26:57', 1, 1),
+('b3241e13-fad5-11ed-9e34-489ebddaa98a', '02047045-fad5-11ed-9e34-489ebddaa98a', 'b323e128-fad5-11ed-9e34-489ebddaa98a', 2, 'c480eaed-8783-4152-8ebe-0cebe3fbe3ef', '2023-05-25 08:25:25', NULL, '0000-00-00 00:00:00', 0, 1);
