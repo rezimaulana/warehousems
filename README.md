@@ -35,12 +35,13 @@
 5. User hanya bisa lihat item
 6. Create item, qty default adalah 0
 7. Nama item dan kategori bisa di edit
-8. Delete menggunakan fitur soft delete dari is active, sehingga transaksi sebelumnya tetap ada.
+8. Delete menggunakan fitur soft delete dari is active, sehingga transaksi sebelumnya tetap ada
 9. View Item beserta jenis request check-in/check-out
 10. User bisa check-in/check-out dengan qty
 11. Admin bisa aprrove atau reject request tersebut
 12. Approve/reject hanya bisa dilakukan 1x
 13. Jika item dalam stok akan minus maka approve tidak bisa dilakukan
+14. Check-out dan check-in bisa lebih dari 1 item
 
 [contributors-shield]: https://img.shields.io/github/contributors/rezimaulana/warehousems.svg?style=for-the-badge
 [contributors-url]: https://github.com/rezimaulana/warehousems/graphs/contributors
